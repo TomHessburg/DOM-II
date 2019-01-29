@@ -3,18 +3,16 @@ let navBar = document.querySelector(".main-navigation");
 let upperImg = document.querySelector(".intro img");
 let secondImg = document.querySelector(".img-content img");
 let headingTxt = document.querySelector(".intro h2")
-let bottomButton = document.querySelector(".btn");
+let bottomButton = document.querySelectorAll(".btn");
 let pickDest = document.querySelector(".content-destination h2");
 let topParagraph = document.querySelector(".intro p");
 
 navBar.addEventListener("mouseover", function(){
-    navBar.style.backgroundColor = "black";
-    navBar.style.color = "white";
+    TweenMax.to(".main-navigation", 1, {x:20});
 })
 
 navBar.addEventListener("mouseleave", function(){
-    navBar.style.backgroundColor = "lightgray";
-    navBar.style.color = "green";
+    TweenMax.to(".main-navigation", 1, {x:-20});
 })
 
 upperImg.addEventListener("drag",function(){ //remove top img from page
@@ -30,9 +28,8 @@ window.addEventListener("scroll",() => {//scrolls screen down 7px per 350ms up t
 
 secondImg.style.cursor = "pointer";
 secondImg.addEventListener("click", () => {//click on second pic 
-    
-        window.scroll(0, scrollY += 200);
-  
+        //window.scroll(0, scrollY += 20);
+        TweenMax.to(".img-content img", 0.2, {rotation:5, scale:1.1});
 })
 
 
@@ -47,8 +44,13 @@ window.addEventListener("keyup",function(e){
 })
 
 
-bottomButton.addEventListener("dblclick", function(){//bottom left button goes black when dbl clicked
-    bottomButton.style.backgroundColor = "black";
+bottomButton.forEach(function(x){
+    x.addEventListener("dblclick", function(){//bottom buttons go black when dbl clicked
+        x.style.backgroundColor = "white";
+        x.style.color = "lightblue";
+        //TweenMax.fromTo(x, 0.5, {width:x.style.width, height:x.style.height}, {width:210, height:50});
+        TweenLite.to(x, 1, { ease: Bounce.easeOut, y: 20 });
+    })
 })
 
 window.addEventListener("wheel", (e) => {//when wheel is move, text gets bigger and turns red...
