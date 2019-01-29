@@ -61,3 +61,37 @@ window.addEventListener("wheel", (e) => {//when wheel is move, text gets bigger 
 topParagraph.addEventListener("mousemove", function(e){
     topParagraph.style.marginLeft = "50px";
 })
+
+
+
+
+//propogation/stop nav items section
+
+const navItems = document.querySelectorAll(".nav a")
+
+navItems.forEach(function(indic){
+
+    indic.addEventListener("click", function(e){
+        console.log("a nav item was clicked");
+        e.preventDefault();
+    })
+})
+
+
+
+
+const bigBtn = document.querySelector(".bigBtn");
+bigBtn.addEventListener('click', e => {
+  console.log(`This is my target: ${e.target}`);
+  console.log(`This is my target: ${e.currentTarget}`);
+});
+
+
+const smallBtn = document.querySelector(".smallBtn");
+smallBtn.addEventListener('click', e => {
+  console.log(`Small btn has been clicked!`);
+  e.stopPropagation();
+});
+
+bigBtn.style.cursor = "pointer";
+smallBtn.style.cursor = "pointer";

@@ -350,3 +350,20 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.bigBtn {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 50px;
+  background: black;
+  color: white;
+  padding: 30px;
+}
+.bigBtn .smallBtn {
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 15px;
+  font-size: 25px;
+  background: white;
+  color: black;
+}
