@@ -54,8 +54,8 @@ bottomButton.forEach(function(x){
 })
 
 window.addEventListener("wheel", (e) => {//when wheel is move, text gets bigger and turns red...
-    pickDest.style.fontSize = "50px";
-    pickDest.style.color = "red";
+    pickDest.style.fontSize = "80px";
+    TweenLite.to(".content-destination h2", 1, { ease: Bounce.easeOut, x:-40});
 })
 
 
