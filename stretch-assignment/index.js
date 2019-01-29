@@ -8,10 +8,15 @@ let gray = fullStack[4];
 console.log(fullStack);
 
 
+
+let xPost = 1;
+
 fullStack.forEach(function(elem){
 
-    elem.addEventListener("click", function(){
-        elem.remove();
+    elem.addEventListener("mousedown", function(){
+        x = xPost*100
+        xPost++;
+        TweenMax.to(elem, 0.1, {x:x});
     })
 
 })
