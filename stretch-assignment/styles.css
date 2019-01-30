@@ -1,7 +1,16 @@
 body {
   display: flex;
-  /*justify-content: center;*/
+  justify-content: center;
+  align-items: center;
+  background: lightgray;
 }
+
+.mainContainer{
+  width: 1000px;
+  background: black;
+  margin: 0 auto;
+}
+
 
 .blocks {
   margin-top: 5%;
@@ -33,4 +42,20 @@ body {
 
 .block--gray {
   background-color: gray;
+}
+
+#winner{
+  color: white;
+  font-family: sans-serif;
+}
+
+.winnerbox{
+ height: 800px;
+ width: 100px;
+ background: rgb(0, 254, 30); 
+}
+
+h1{
+  text-align: center;
+  margin-left: 0;
 }
